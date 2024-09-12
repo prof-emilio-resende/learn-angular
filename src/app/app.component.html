@@ -5,14 +5,9 @@
 <br /><hr />
 <main class="main">
   <div class="content">
-    <div class="left-side">
-      <h1>Olá, {{ title }}</h1>
-      <p>Parabéns, seu app está em execução. 🎉</p>
-    </div>
+    <app-nav-bar [data]="{title}"/>
     <div class="divider" role="separator" aria-label="Divider"></div>
-    <div class="right-side">
-      Primeiros passos com Angular
-    </div>
+    <app-content/>
   </div>
 </main>
 
