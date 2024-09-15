@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { SigninService } from './services/SiginService';
 import { FormsModule } from '@angular/forms';
 
@@ -13,11 +13,13 @@ import { FormsModule } from '@angular/forms';
 export class SigninComponent {
   @Input() email: string = '';
   @Input() phone: string = '';
+  @Output() submittedControl = new EventEmitter<boolean>();
 
   constructor(private svc: SigninService) { }
 
   signIn() {
     const result = this.svc.signIn({ email: this.email, phone: this.phone });
+    this.submittedControl.emit(true);
     console.log(result);
     return;
   }

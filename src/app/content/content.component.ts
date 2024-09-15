@@ -9,5 +9,9 @@ import { SigninComponent } from "../signin/signin.component";
   styleUrl: './content.component.css'
 })
 export class ContentComponent {
+  submitted: boolean = false;
 
+  setSubmitted(isSubmitted: boolean) {
+    this.submitted = isSubmitted;
+  }
 }

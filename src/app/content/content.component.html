@@ -1,4 +1,10 @@
 <div class="right-side">
     <h1>Primeiros passos com Angular</h1>
-    <app-signin></app-signin>
+    @if (submitted) {
+        <div>Obrigado por assinar nosso feed! <button class="pure-button button-xsmall" type="button" (click)="setSubmitted(false)">Voltar</button></div>
+    }
+    @else {
+        <app-signin (submittedControl)="setSubmitted($event)"></app-signin>
+    }
+    
 </div>
