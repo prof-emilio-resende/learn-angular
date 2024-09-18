@@ -2,11 +2,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { SigninService } from './services/SiginService';
 import { FormsModule } from '@angular/forms';
 import { OnHoverTriggerValidationDirective } from '../utils/directives/on-hover-trigger-validation.directive';
+import { ListElementsDirective } from '../utils/directives/list-elements.directive';
 
 @Component({
   selector: 'app-signin',
   standalone: true,
-  imports: [FormsModule, OnHoverTriggerValidationDirective],
+  imports: [FormsModule, OnHoverTriggerValidationDirective, ListElementsDirective],
   templateUrl: './signin.component.html',
   styleUrl: './signin.component.css',
   providers: [SigninService]

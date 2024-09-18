@@ -22,7 +22,7 @@ export class OnHoverTriggerValidationDirective {
     this.element.nativeElement.classList.remove('invalid');
 
     if(!isValid) {
-      this.errors.push('formato do campo inválido');
+      this.errors.push(`dados inválidos: ${value}`);
       this.element.nativeElement.classList.add('invalid');
       this.element.nativeElement.focus();
     }

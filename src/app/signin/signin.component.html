@@ -7,13 +7,17 @@
       <div class="field">
         <label for="email" class="fieldText">e-mail</label>
         <input id="email" [(ngModel)]="email" type="text" placeholder="meu melhor e-mail" hover-validation [format]="emailRegExp" [errors]="emailErrors"/>
-        @for (errorMsg of this.emailErrors; track $index) {
-          <span class="invalid">{{errorMsg}}</span>
-        }
+        <span class="invalid" *listElements="emailErrors; let error of emailErrors; let i = index">
+          {{ i + 1 }}. {{ error }}
+        </span>
+        
       </div>
       <div class="field">
         <label for="phone" class="fieldText">telefone</label>
         <input id="phone" [(ngModel)]="phone" type="text" placeholder="meu melhor telefone" hover-validation [format]="phoneRegExp" [errors]="phoneErrors" />
+        <span class="invalid" *listElements="phoneErrors; let error of phoneErrors; let i = index">
+          {{ i + 1 }}. {{ error }}
+        </span>
       </div>
       <hr />
       <button type="button" class="pure-button pure-button-primary" (click)="signIn()">
