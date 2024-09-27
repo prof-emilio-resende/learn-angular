@@ -57,7 +57,7 @@ p {
 }
 
 main {
-    width: 100%;
+    width: calc(100% - 2rem);
     min-height: 100%;
     display: flex;
     justify-content: center;
@@ -70,7 +70,7 @@ main {
 .content {
     display: flex;
     justify-content: space-around;
-    width: 100%;
+    width: 80%;
     max-width: 700px;
     margin-bottom: 3rem;
 }
@@ -97,7 +97,7 @@ main {
 
     .divider {
         height: 1px;
-        width: 100%;
+        width: 80%;
         background: var(--red-to-pink-to-purple-horizontal-gradient);
         margin-block: 1.5rem;
     }

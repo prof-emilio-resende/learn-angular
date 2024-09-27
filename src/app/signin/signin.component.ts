@@ -3,6 +3,7 @@ import { SigninService } from './services/SiginService';
 import { FormsModule } from '@angular/forms';
 import { OnHoverTriggerValidationDirective } from '../utils/directives/on-hover-trigger-validation.directive';
 import { ListElementsDirective } from '../utils/directives/list-elements.directive';
+import { User } from './models/User';
 
 @Component({
   selector: 'app-signin',
@@ -20,13 +21,14 @@ export class SigninComponent {
 
   @Input() email: string = '';
   @Input() phone: string = '';
-  @Output() submittedControl = new EventEmitter<boolean>();
+  @Output() submittedControl = new EventEmitter<User>();
 
   constructor(private svc: SigninService) { }
 
   signIn() {
-    const result = this.svc.signIn({ email: this.email, phone: this.phone });
-    this.submittedControl.emit(true);
+    const record: User = { email: this.email, phone: this.phone };
+    const result = this.svc.signIn(record);
+    this.submittedControl.emit(record);
     console.log(result);
     return;
   }
