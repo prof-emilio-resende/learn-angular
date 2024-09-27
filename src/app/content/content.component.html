@@ -6,7 +6,8 @@
                 Obrigado por assinar nosso feed! <button class="pure-button button-xsmall" type="button" (click)="setSubmitted(null)">Voltar</button>
             </div>
             <div>
-                {{ submitted | json }}
+                {{ submitted | json | uppercase }}<br/>
+                {{ submitted.email | sensitive }}
             </div>
         </div>
 
